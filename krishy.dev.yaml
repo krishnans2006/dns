@@ -1,7 +1,7 @@
 ---
 
 '':
-  # Proxy root to VPS (oracle-amp)
+  # @ -> VPS (oracle-amp)
   - type: A
     value: 150.136.13.65
     octodns:
@@ -32,21 +32,30 @@
       cloudflare:
         auto-ttl: true
 
-# Proxy all subdomains to VPS (oracle-amp)
-'*':
-  - type: A
-    value: 150.136.13.65
-    octodns:
-      cloudflare:
-        proxied: true
-        auto-ttl: true
-
 # Mail DMARC Policy
 _dmarc:
   - type: TXT
     value: v=DMARC1\; p=none\; rua=mailto:17c7a73d99f04b50a0a3c82d7ada185d@dmarc-reports.cloudflare.net
     octodns:
       cloudflare:
+        auto-ttl: true
+
+# www -> Cloudflare Pages (krishnan.pages.dev)
+'www':
+  - type: CNAME
+    value: krishnan.pages.dev.
+    octodns:
+      cloudflare:
+        proxied: true
+        auto-ttl: true
+
+# * -> VPS (oracle-amp)
+'*':
+  - type: A
+    value: 150.136.13.65
+    octodns:
+      cloudflare:
+        proxied: true
         auto-ttl: true
 
 ...
