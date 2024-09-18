@@ -1,6 +1,7 @@
 ---
 
 '':
+  # Proxy root to VPS (oracle-amp)
   - type: A
     value: 150.136.13.65
     octodns:
@@ -8,6 +9,7 @@
         proxied: true
         auto-ttl: true
 
+  # Cloudflare Mail Configuration
   - type: MX
     values:
     - exchange: route3.mx.cloudflare.net.
@@ -22,12 +24,15 @@
 
   - type: TXT
     values:
+    # Google Search Console/Postmaster Verification
     - google-site-verification=lsj0VFKZkzkks6vV5gy8bISfExCNjuFCHEayZtxAyZc
+    # Mail SPF Configuration
     - v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all
     octodns:
       cloudflare:
         auto-ttl: true
 
+# Proxy all subdomains to VPS (oracle-amp)
 '*':
   - type: A
     value: 150.136.13.65
@@ -36,6 +41,7 @@
         proxied: true
         auto-ttl: true
 
+# Mail DMARC Policy
 _dmarc:
   - type: TXT
     value: v=DMARC1\; p=none\; rua=mailto:17c7a73d99f04b50a0a3c82d7ada185d@dmarc-reports.cloudflare.net
