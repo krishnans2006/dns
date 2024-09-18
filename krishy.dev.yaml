@@ -1,17 +1,14 @@
 ---
-? ''
-: - octodns:
-      cloudflare:
-        auto-ttl: true
-        proxied: true
-    ttl: 300
-    type: A
+
+'':
+  - type: A
     value: 150.136.13.65
-  - octodns:
+    octodns:
       cloudflare:
+        proxied: true
         auto-ttl: true
-    ttl: 300
-    type: MX
+
+  - type: MX
     values:
     - exchange: route3.mx.cloudflare.net.
       preference: 2
@@ -19,27 +16,31 @@
       preference: 83
     - exchange: route2.mx.cloudflare.net.
       preference: 85
-  - octodns:
+    octodns:
       cloudflare:
         auto-ttl: true
-        comment: Google Search Console/Postmaster Tools
-    ttl: 300
-    type: TXT
+
+  - type: TXT
     values:
     - google-site-verification=lsj0VFKZkzkks6vV5gy8bISfExCNjuFCHEayZtxAyZc
     - v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all
+    octodns:
+      cloudflare:
+        auto-ttl: true
+
 '*':
-  octodns:
-    cloudflare:
-      auto-ttl: true
-      proxied: true
-  ttl: 300
-  type: A
-  value: 150.136.13.65
+  - type: A
+    value: 150.136.13.65
+    octodns:
+      cloudflare:
+        proxied: true
+        auto-ttl: true
+
 _dmarc:
-  octodns:
-    cloudflare:
-      auto-ttl: true
-  ttl: 300
-  type: TXT
-  value: v=DMARC1\; p=none\; rua=mailto:17c7a73d99f04b50a0a3c82d7ada185d@dmarc-reports.cloudflare.net
+  - type: TXT
+    value: v=DMARC1\; p=none\; rua=mailto:17c7a73d99f04b50a0a3c82d7ada185d@dmarc-reports.cloudflare.net
+    octodns:
+      cloudflare:
+        auto-ttl: true
+
+...
