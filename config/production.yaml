@@ -1,0 +1,17 @@
+---
+providers:
+  config:
+    class: octodns.provider.yaml.YamlProvider
+    directory: ./
+    default_ttl: 3600
+    enforce_order: false
+  cloudflare:
+    class: octodns_cloudflare.CloudflareProvider
+    token: env/CLOUDFLARE_TOKEN
+
+zones:
+  krishy.dev.:
+    sources:
+      - config
+    targets:
+      - cloudflare
