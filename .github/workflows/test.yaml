@@ -1,0 +1,31 @@
+name: test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  octodns:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'poetry'
+
+      - name: Install dependencies
+        run: poetry install --no-interaction
+
+      - name: Dry run
+        run: poetry run ./scripts/dry-run.sh
+        env:
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
