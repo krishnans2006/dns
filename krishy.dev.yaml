@@ -40,6 +40,14 @@ _dmarc:
       cloudflare:
         auto-ttl: true
 
+# Discord Verification
+_discord:
+  - type: TXT
+    value: dh=e4f9726fcf7a59a3f5b77909f7575517ac35089c
+    octodns:
+      cloudflare:
+        auto-ttl: true
+
 # www -> Cloudflare Pages (krishnan.pages.dev)
 'www':
   - type: CNAME
