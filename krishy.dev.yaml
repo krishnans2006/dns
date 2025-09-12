@@ -26,6 +26,8 @@
     values:
     # Google Search Console/Postmaster Verification
     - google-site-verification=lsj0VFKZkzkks6vV5gy8bISfExCNjuFCHEayZtxAyZc
+    # HIBP Verification
+    - hibp-verify=dweb_wgt9q6vgskc8n65qsmk93h8s
     # Mail SPF Configuration
     - v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all
     octodns:
