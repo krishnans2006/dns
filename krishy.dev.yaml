@@ -57,6 +57,15 @@ _discord:
         proxied: true
         auto-ttl: true
 
+# status -> Better Uptime
+'status':
+  - type: CNAME
+    value: statuspage.betteruptime.com.
+    octodns:
+      cloudflare:
+        proxied: false
+        auto-ttl: true
+
 # * -> VPS (oracle-amp)
 '*':
   - type: A
