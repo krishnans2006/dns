@@ -76,6 +76,56 @@ _discord:
         proxied: false
         auto-ttl: true
 
+# krishnan-pi
+'music':
+  - type: A
+    value: 100.87.220.120
+    octodns:
+      cloudflare:
+        proxied: false
+        auto-ttl: true
+        comment: krishnan-pi
+'media':
+  - type: A
+    value: 100.87.220.120
+    octodns:
+      cloudflare:
+        proxied: false
+        auto-ttl: true
+        comment: krishnan-pi
+'photos':
+  - type: A
+    value: 100.87.220.120
+    octodns:
+      cloudflare:
+        proxied: false
+        auto-ttl: true
+        comment: krishnan-pi
+'rtlsdr':
+  - type: A
+    value: 100.87.220.120
+    octodns:
+      cloudflare:
+        proxied: false
+        auto-ttl: true
+        comment: krishnan-pi
+'rtlsdr-fr24':
+  - type: A
+    value: 100.87.220.120
+    octodns:
+      cloudflare:
+        proxied: false
+        auto-ttl: true
+        comment: krishnan-pi
+'rtlsdr-fa':
+  - type: A
+    value: 100.87.220.120
+    octodns:
+      cloudflare:
+        proxied: false
+        auto-ttl: true
+        comment: krishnan-pi
+
 # * -> VPS (oracle-amp)
 '*':
   - type: A
